@@ -14,7 +14,7 @@ const App = () => {
   const countries = useSelector((state) => state.countries, shallowEqual);
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden flex flex-col text-white">
+    <div className="w-screen h-screen relative overflow-x-hidden flex flex-col text-white">
       <Header theme={theme} />
       <Routes>
         <Route

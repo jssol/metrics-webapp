@@ -7,7 +7,7 @@ const Home = (props) => {
   const { hsl } = theme;
 
   return (
-    <main className="h-full w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
+    <main className="h-full w-full relative top-16 z-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
       {
         countries.map((country) => (
           <CountryPreview

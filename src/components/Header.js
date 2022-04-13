@@ -11,7 +11,7 @@ const Header = (props) => {
   };
 
   return (
-    <header className="w-full flex items-center justify-between px-6 py-4" style={style}>
+    <header className="w-full flex fixed top-0 z-10 shadow-md items-center justify-between px-6 py-4" style={style}>
       <h1 className="text-3xl text-white font-bold">
         <span className="text-black">Cultur</span>
         escape
