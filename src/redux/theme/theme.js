@@ -2,7 +2,12 @@ const THEME_CHANGED = 'app/theme/THEME_CHANGED';
 
 const changeTheme = (theme) => ({ type: THEME_CHANGED, payload: theme });
 
-const reducer = (state = '#4369b2', action) => {
+const initialState = {
+  hex: '#4369b2',
+  hsl: 'hsl(219, 45%,',
+};
+
+const reducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
