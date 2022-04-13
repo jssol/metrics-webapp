@@ -13,8 +13,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden flex flex-col">
-      <Header />
+    <div className="w-screen h-screen overflow-x-hidden flex flex-col text-white">
+      <Header theme={theme} />
       <Routes>
         <Route
           exact
