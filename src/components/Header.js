@@ -4,9 +4,10 @@ import { FaCog, FaSearch } from 'react-icons/fa';
 
 const Header = (props) => {
   const { theme } = props;
+  const { hex } = theme;
 
   const style = {
-    backgroundColor: theme,
+    backgroundColor: hex,
   };
 
   return (
@@ -15,16 +16,16 @@ const Header = (props) => {
         <span className="text-black">Cultur</span>
         escape
       </h1>
-      <section>
+      <section className="flex items-center text-2xl">
         <FaSearch />
-        <FaCog />
+        <FaCog className="ml-3" />
       </section>
     </header>
   );
 };
 
 Header.propTypes = {
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Header;
