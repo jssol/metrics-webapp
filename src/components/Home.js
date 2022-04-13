@@ -9,7 +9,7 @@ const Home = (props) => {
   };
 
   return (
-    <main className="text-center text-3xl text-white font-bold" style={style}>
+    <main className="h-full w-full text-center text-3xl text-white" style={style}>
       Home
     </main>
   );
