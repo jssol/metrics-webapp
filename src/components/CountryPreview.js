@@ -17,7 +17,7 @@ const CountryPreview = (props) => {
   };
 
   return (
-    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full text-center text-xl text-white p-2 CountryPreview" style={style}>
+    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full text-center text-xl text-white p-2 aspect-square CountryPreview" style={style}>
       <h2>
         {common}
       </h2>
