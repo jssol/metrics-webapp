@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import Header from './components/Header';
 import Home from './components/Home';
 import { getCountries } from './redux/countries/countries';
 
 const App = () => {
   const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme);
   useEffect(() => {
     dispatch(getCountries());
   }, []);
+  const theme = useSelector((state) => state.theme, shallowEqual);
+  const countries = useSelector((state) => state.countries, shallowEqual);
 
   return (
     <div className="w-screen h-screen overflow-x-hidden flex flex-col text-white">
@@ -19,7 +20,7 @@ const App = () => {
         <Route
           exact
           path="/"
-          element={(<Home theme={theme} />)}
+          element={(<Home theme={theme} countries={countries} />)}
         />
       </Routes>
     </div>
