@@ -2,9 +2,11 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import countries from './countries/countries';
+import theme from './theme/theme';
 
 const rootReducer = combineReducers({
-  countries
+  countries,
+  theme,
 });
 
 const middlewares = [thunk];
