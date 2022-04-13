@@ -14,20 +14,10 @@ const reducer = (state = [], action) => {
 };
 
 const getCountries = () => async (dispatch) => {
-  await fetch('https://api.spacexdata.com/v3/countries')
+  await fetch('https://restcountries.com/v3.1/all')
     .then((data) => data.json())
     .then((data) => {
-      const countries = [];
-      data.forEach((country) => {
-        countries.push({
-          id: country.id,
-          name: country.rocket_name,
-          description: country.description,
-          image: country.flickr_images[0],
-          wikipedia: country.wikipedia,
-        });
-      });
-
+      const countries = data;
       dispatch(fetchCountries(countries));
     });
 };
