@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import randomNumber from '../logic/randomNumber';
 import '../sass/CountryPreview.scss';
 
@@ -17,13 +18,16 @@ const CountryPreview = (props) => {
   };
 
   return (
-    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full text-center text-xl text-white p-2 aspect-square CountryPreview" style={style}>
-      <h2>
-        {common}
-      </h2>
-      <p>
-        {capital}
-      </p>
+    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full flex flex-col items-end justify-between text-2xl text-white p-4 aspect-square CountryPreview" style={style}>
+      <FaRegArrowAltCircleRight />
+      <section className="flex flex-col items-end">
+        <h2 className="font-black">
+          {common}
+        </h2>
+        <p className="text-gray-300 text-xl">
+          {capital}
+        </p>
+      </section>
     </NavLink>
   );
 };
