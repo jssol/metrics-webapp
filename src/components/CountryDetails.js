@@ -1,16 +1,25 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+import randomNumber from '../logic/randomNumber';
 
 const CountryDetails = (props) => {
-  const { theme: { hex } } = props;
+  const params = useParams();
 
+  const { theme: { hsl } } = props;
+  const { country } = params;
+
+  const shade = `${hsl + randomNumber(40, 60)}%)`;
   const style = {
-    backgroundColor: hex,
+    backgroundColor: shade,
   };
 
   return (
-    <main className="h-full w-full relative flex flex-col items-end justify-between text-2xl lg:text-xl text-white p-4 aspect-square" style={style}>
-      CountryDetails
+    <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white">
+      <section className="w-full h-full" style={style}>
+        Country details
+        {country}
+      </section>
     </main>
   );
 };
