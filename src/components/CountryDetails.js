@@ -20,7 +20,7 @@ const CountryDetails = (props) => {
 
   return (
     <main className="h-full w-full relative flex flex-col items-end justify-between text-2xl lg:text-xl text-white p-4 aspect-square" style={style}>
-      <img src={path} alt={common} className="w-3/5 absolute top-4 left-4 z-0 opacity-30" />
+      <img src={path} alt={hex} className="w-3/5 absolute top-4 left-4 z-0 opacity-30" />
       <section className="flex flex-col items-end text-right z-10">
         <h2 className="font-black">
           Congo DR
