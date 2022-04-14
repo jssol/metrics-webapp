@@ -9,8 +9,13 @@ const CountryPreview = (props) => {
   const { hsl, country } = props;
   const { name: { common }, capital, cca2 } = country;
 
-  const shade = `${hsl + randomNumber(30, 60)}%)`;
-  const bgImage = `url("../src/data/countries/${cca2.toLowerCase()}/vector.svg`;
+  const getImage = async (iso) => {
+    const url = await import(`url("../src/data/countries/${iso}/vector.svg`);
+    return url;
+  };
+
+  const shade = `${hsl + randomNumber(40, 60)}%)`;
+  const bgImage = getImage(cca2.toLowerCase());
 
   const style = {
     backgroundColor: shade,
