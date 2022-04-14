@@ -9,23 +9,27 @@ const CountryPreview = (props) => {
   const { hsl, country } = props;
   const { name: { common }, capital, cca2 } = country;
 
-  const getImage = async (iso) => {
-    const url = await import(`url("../src/data/countries/${iso}/vector.svg`);
+  const getImage = (iso) => {
+    let url;
+    import(`../data/countries/${iso}/vector.svg`)
+      .then(({ default: path }) => {
+        url = path;
+      });
     return url;
   };
 
   const shade = `${hsl + randomNumber(40, 60)}%)`;
-  const bgImage = getImage(cca2.toLowerCase());
+  const map = getImage(cca2.toLowerCase());
 
   const style = {
     backgroundColor: shade,
-    backgroundImage: bgImage,
   };
 
   return (
-    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full flex flex-col items-end justify-between text-2xl lg:text-xl text-white p-4 aspect-square CountryPreview" style={style}>
-      <FaRegArrowAltCircleRight />
-      <section className="flex flex-col items-end text-right">
+    <NavLink to={`/details/${common.toLowerCase()}`} className="h-full w-full overflow-hidden relative flex flex-col items-end justify-between text-2xl lg:text-xl text-white p-4 aspect-square CountryPreview" style={style}>
+      <img src={map} alt={common} className="absolute top-0 left-0 z-0 opacity-75" />
+      <FaRegArrowAltCircleRight className="z-10" />
+      <section className="flex flex-col items-end text-right z-10">
         <h2 className="font-black">
           {common}
         </h2>
