@@ -24,7 +24,7 @@ const App = () => {
           element={(<Home theme={theme} countries={countries} />)}
         />
         <Route
-          path="/:name/details"
+          path="/:country/details"
           element={(<CountryDetails theme={theme} />)}
         />
       </Routes>
