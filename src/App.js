@@ -27,7 +27,7 @@ const App = () => {
         />
         <Route
           path="/:country/details"
-          element={(<CountryDetails theme={theme} />)}
+          element={(<CountryDetails theme={theme} countries={countries} />)}
         >
           <Route index element={<General />} />
           <Route path="general" element={<General />} />
