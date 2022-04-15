@@ -32,7 +32,7 @@ const Header = (props) => {
           </section>
         </>
       )}
-      {detailsOpen && <NavLink onClick={handleClick}><FaChevronLeft /></NavLink>}
+      {detailsOpen && <NavLink to="/" className="text-2xl my-1" onClick={handleClick}><FaChevronLeft /></NavLink>}
     </header>
   );
 };

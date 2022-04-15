@@ -9,7 +9,7 @@ const CountryDetails = (props) => {
   const { theme: { hsl } } = props;
   const { country } = params;
 
-  const shade = `${hsl + randomNumber(40, 60)}%)`;
+  const shade = `${hsl + randomNumber(45, 53)}%)`;
   const style = {
     backgroundColor: shade,
   };
@@ -18,6 +18,7 @@ const CountryDetails = (props) => {
     <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white">
       <section className="w-full h-full" style={style}>
         Country details
+        {' '}
         {country}
       </section>
     </main>
