@@ -1,16 +1,28 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCovidData } from '../redux/covid/covid';
 
-const Covid = () => {
-  const params = useParams();
-  const { country } = params;
+const Covid = ({ countryName }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCovidData(countryName));
+  }, []);
+  const covidData = useSelector((state) => state.covid);
+
+  const { todayConfirmed } = covidData;
 
   return (
     <main>
       Covid
-      {country}
+      {countryName}
+      {todayConfirmed}
     </main>
   );
+};
+
+Covid.propTypes = {
+  countryName: PropTypes.string.isRequired,
 };
 
 export default Covid;
