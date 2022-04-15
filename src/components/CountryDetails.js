@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink, Outlet } from 'react-router-dom';
 import randomNumber from '../logic/randomNumber';
 
 const CountryDetails = (props) => {
@@ -15,11 +15,18 @@ const CountryDetails = (props) => {
   };
 
   return (
-    <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white">
-      <section className="w-full h-full" style={style}>
+    <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white" style={style}>
+      <section className="w-full h-10">
         Country details
         {' '}
         {country}
+      </section>
+      <section>
+        <NavLink to="general">General</NavLink>
+        <NavLink to="covid">Covid</NavLink>
+      </section>
+      <section>
+        <Outlet />
       </section>
     </main>
   );
