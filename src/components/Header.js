@@ -1,21 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FaCog, FaSearch, FaChevronLeft } from 'react-icons/fa';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { startSearch } from '../redux/search/search';
 import { closeDetails } from '../redux/details/details';
+import Form from './Form';
 
 const Header = (props) => {
   const dispatch = useDispatch();
   const detailsOpen = useSelector((state) => state.details);
+  const search = useSelector((state) => state.search, shallowEqual);
   const { theme } = props;
   const { hex } = theme;
   const style = {
     backgroundColor: hex,
   };
 
+  const { searchOpen } = search;
+
   const handleClick = () => {
     dispatch(closeDetails());
+  };
+
+  const handleSearch = () => {
+    dispatch(startSearch);
   };
 
   return (
@@ -27,7 +36,8 @@ const Header = (props) => {
             escape
           </h1>
           <section className="flex items-center text-2xl">
-            <FaSearch />
+            {!searchOpen && <FaSearch onClick={handleSearch} />}
+            {searchOpen && <Form />}
             <FaCog className="ml-3" />
           </section>
         </>
