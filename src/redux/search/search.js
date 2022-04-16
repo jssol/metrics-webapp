@@ -23,6 +23,7 @@ const reducer = (state = initialState, action) => {
     case SEARCH_STARTED:
       return {
         ...state,
+        searchResult: [],
         searchOpen: payload,
       };
     case SEARCH_ENDED:
