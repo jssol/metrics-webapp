@@ -5,22 +5,24 @@ import { useDispatch } from 'react-redux';
 import randomNumber from '../logic/randomNumber';
 import General from './General';
 import { getCountryData } from '../redux/country/country';
+import { openDetails } from '../redux/details/details';
 
 const CountryDetails = ({ theme, countries }) => {
   const params = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
     const { country } = params;
+    dispatch(openDetails());
     countries.forEach((count) => {
-      if (count.name.common.toLoweCase() === country.toLoweCase()) {
-        dispatch(getCountryData(count.cca2.toLoweCase()));
+      if (count.name.common.toLowerCase() === country.toLowerCase()) {
+        dispatch(getCountryData(count.cca2.toLowerCase()));
       }
     });
   }, []);
 
-  const { hsl } = theme;
-  const { country: countryName } = params;
+  const { country } = params;
 
+  const { hsl } = theme;
   const shade = `${hsl + randomNumber(45, 53)}%)`;
   const style = {
     backgroundColor: shade,
@@ -28,11 +30,11 @@ const CountryDetails = ({ theme, countries }) => {
 
   return (
     <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white" style={style}>
-      <section className="w-full h-10">
-        {countryName.charAt(0).upperCase() + countryName.slice(1)}
+      <h1 className="w-11/12 mt-4 capitalize">
+        {country}
         {' / '}
         Details
-      </section>
+      </h1>
       <General />
     </main>
   );
