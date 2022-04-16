@@ -75,8 +75,8 @@ describe('Home page component', () => {
     expect(homePage).toMatchSnapshot();
   });
 
-  test('renders  country  name', async () => {
-    await render(
+  test('renders  country  name', () => {
+    render(
       <Provider store={Store}>
         <Router>
           <Home theme={theme} countries={countries} />
@@ -87,8 +87,22 @@ describe('Home page component', () => {
     expect(countryName).toHaveLength(1);
   });
 
-  test('renders  country  capital', async () => {
-    await render(
+  test('Country Preview link', () => {
+    const { container } = render(
+      <Provider store={Store}>
+        <Router>
+          <Home theme={theme} countries={countries} />
+        </Router>
+      </Provider>,
+    );
+
+    const countryPreview = container.querySelector('a');
+    userEvent.click(countryPreview);
+    expect(screen.getByText(/congo/i)).toBeInTheDocument();
+  });
+
+  test('renders  country  capital', () => {
+    render(
       <Provider store={Store}>
         <Router>
           <Home theme={theme} countries={countries} />
