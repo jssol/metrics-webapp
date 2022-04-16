@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
@@ -29,9 +29,9 @@ const Store = createStore(
 
 describe('Header component', () => {
   test('renders app title', () => {
-    const theme = { 
-      hex: "#ffffff",
-      hsl: "hsl(360,50,",
+    const theme = {
+      hex: '#ffffff',
+      hsl: 'hsl(360,50,',
     };
 
     render(
@@ -49,16 +49,16 @@ describe('Header component', () => {
 describe('Home page component', () => {
   let countries;
   let theme;
-  
+
   beforeEach(() => {
     countries = [
-      { name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },
-      { name: { common: "rwanda", official: "rwanda"}, cca2: 'rw', capital: ["kigali"] },
-      { name: { common: "burundi", official: "burundi"}, cca2: 'bu', capital: ["bujumbura"] },
+      { name: { common: 'congo', official: 'dr congo' }, cca2: 'cd', capital: ['kinshasa'] },
+      { name: { common: 'rwanda', official: 'rwanda' }, cca2: 'rw', capital: ['kigali'] },
+      { name: { common: 'burundi', official: 'burundi' }, cca2: 'bu', capital: ['bujumbura'] },
     ];
-    theme = { 
-      hex: "#ffffff",
-      hsl: "hsl(360,50,",
+    theme = {
+      hex: '#ffffff',
+      hsl: 'hsl(360,50,',
     };
   });
 
