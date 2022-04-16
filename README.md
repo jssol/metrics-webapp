@@ -15,6 +15,10 @@
 
 ![details page screenshot](./public/details.png)
 
+## Video walkthrough
+
+[More about the metrics-webapp](https://www.loom.com/share/5fdbbcbe22924dddb3c8d910deecbd18)
+
 ## Built With
 
 - HTML5, CSS3
