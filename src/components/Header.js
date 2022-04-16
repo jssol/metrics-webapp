@@ -24,7 +24,8 @@ const Header = (props) => {
   };
 
   const handleSearch = () => {
-    dispatch(startSearch);
+    dispatch(startSearch());
+    console.log('works');
   };
 
   return (
@@ -36,7 +37,11 @@ const Header = (props) => {
             escape
           </h1>
           <section className="flex items-center text-2xl">
-            {!searchOpen && <FaSearch onClick={handleSearch} />}
+            {!searchOpen && (
+              <button type="button" onClick={handleSearch}>
+                <FaSearch />
+              </button>
+            )}
             {searchOpen && <Form />}
             <FaCog className="ml-3" />
           </section>
