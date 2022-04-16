@@ -26,8 +26,8 @@ const General = () => {
   } = country;
 
   return (
-    <main className="w-11/12 flex flex-col">
-      <section className="grid grid-cols-2 shadow p-2">
+    <main className="w-full flex flex-col items-center">
+      <section className="w-11/12 grid grid-cols-2 shadow-md my-3 p-2">
         <div className="flex items-center justify-center">
           <img src={flag} alt={cca3} className="aspect-square" />
         </div>
@@ -35,7 +35,7 @@ const General = () => {
           <img src={emblem} alt={cca3} className="w-10/12 aspect-square" />
         </div>
       </section>
-      <section className="flex flex-col pt-2">
+      <section className="w-full bg-gray-900 flex flex-col py-5 px-10 capitalize">
         <h3 className="font-semibold text-xl">General</h3>
         <p className="ml-3">
           Capital city:
@@ -91,7 +91,7 @@ const General = () => {
         <p className="ml-3">
           Timezones:
           {' '}
-          {timezones.length}
+          {timezones}
         </p>
         <h3 className="font-semibold text-xl">ISO codes</h3>
         <p className="ml-3">
