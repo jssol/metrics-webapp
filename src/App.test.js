@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
@@ -11,6 +11,7 @@ import countries from './redux/countries/countries';
 import details from './redux/details/details';
 import theme from './redux/theme/theme';
 import App from './App';
+import Header from './components/Header';
 import Home from './components/Home';
 
 const rootReducer = combineReducers({
@@ -28,10 +29,15 @@ const Store = createStore(
 
 describe('Header component', () => {
   test('renders app title', () => {
+    const theme = { 
+      hex: "#ffffff",
+      hsl: "hsl(360,50,",
+    };
+
     render(
       <Provider store={Store}>
         <Router>
-          <App />
+          <Header theme={theme} />
         </Router>
       </Provider>,
     );
@@ -41,17 +47,22 @@ describe('Header component', () => {
 });
 
 describe('Home page component', () => {
-  test('renders correctly', () => {
-    const countries = [
+  let countries;
+  let theme;
+  
+  beforeEach(() => {
+    countries = [
       { name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },
-      { name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },
-      { name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },
+      { name: { common: "rwanda", official: "rwanda"}, cca2: 'rw', capital: ["kigali"] },
+      { name: { common: "burundi", official: "burundi"}, cca2: 'bu', capital: ["bujumbura"] },
     ];
-    const theme = { 
+    theme = { 
       hex: "#ffffff",
       hsl: "hsl(360,50,",
     };
+  });
 
+  test('renders correctly', () => {
     const homePage = renderer.create(
       <Provider store={Store}>
         <Router>
@@ -63,10 +74,9 @@ describe('Home page component', () => {
     ).toJSON();
     expect(homePage).toMatchSnapshot();
   });
-  test('renders  country  name', () => {
-    const countries = [{ name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },];
 
-    render(
+  test('renders  country  name', async () => {
+    await render(
       <Provider store={Store}>
         <Router>
           <Home theme={theme} countries={countries} />
@@ -76,10 +86,9 @@ describe('Home page component', () => {
     const countryName = screen.getAllByText(/congo/i);
     expect(countryName).toHaveLength(1);
   });
-  test('renders  country  capital', () => {
-    const countries = [{ name: { common: "congo", official: "dr congo"}, cca2: 'cd', capital: ["kinshasa"] },];
 
-    render(
+  test('renders  country  capital', async () => {
+    await render(
       <Provider store={Store}>
         <Router>
           <Home theme={theme} countries={countries} />
