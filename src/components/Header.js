@@ -25,7 +25,6 @@ const Header = (props) => {
 
   const handleSearch = () => {
     dispatch(startSearch());
-    console.log('works');
   };
 
   return (
