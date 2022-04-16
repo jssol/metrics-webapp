@@ -9,11 +9,11 @@
 
 - **Home page**
 
-![rockets page screenshot](./public/rockets.png)
+![home page screenshot](./public/home.png)
 
 - **Country details page**
 
-![missions page screenshot](./public/missions.png)
+![details page screenshot](./public/details.png)
 
 ## Built With
 
