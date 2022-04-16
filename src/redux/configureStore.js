@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import countries from './countries/countries';
 import theme from './theme/theme';
 import details from './details/details';
+import country from './country/country';
 
 const rootReducer = combineReducers({
   countries,
   theme,
   details,
+  country,
 });
 
 const middlewares = [thunk];
