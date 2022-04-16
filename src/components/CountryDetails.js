@@ -29,7 +29,7 @@ const CountryDetails = ({ theme, countries }) => {
   };
 
   return (
-    <main className="h-full w-full relative flex flex-col items-center top-16 z-0 text-white" style={style}>
+    <main className="w-full relative flex flex-col items-center top-16 z-0 text-white" style={style}>
       <h1 className="w-11/12 mt-4 capitalize">
         {country}
         {' / '}

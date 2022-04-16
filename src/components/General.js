@@ -5,16 +5,13 @@ const General = () => {
   const country = useSelector((state) => state.country);
 
   const {
-    name,
     cca2,
     cca3,
     independent,
     unMember,
-    currencies,
     capital,
     region,
     subregion,
-    languages,
     coordinates,
     landlocked,
     area,
@@ -29,95 +26,98 @@ const General = () => {
   } = country;
 
   return (
-    <main className="w-11/12 flex flex-col py-4">
-      <section className="flex items-center justify-center shadow">
-        <img src={flag} alt={cca3} className="w-full aspect-square" />
-        <img src={emblem} alt={cca3} className="w-full aspect-square" />
+    <main className="w-11/12 flex flex-col">
+      <section className="grid grid-cols-2 shadow p-2">
+        <div className="flex items-center justify-center">
+          <img src={flag} alt={cca3} className="aspect-square" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src={emblem} alt={cca3} className="w-10/12 aspect-square" />
+        </div>
       </section>
-      <section className="flex flex-col">
-        <h3>General</h3>
-        <p className="ml-3">
-          Common name:
-          {name.common}
-        </p>
-        <p className="ml-3">
-          Official name:
-          {name.official}
-        </p>
+      <section className="flex flex-col pt-2">
+        <h3 className="font-semibold text-xl">General</h3>
         <p className="ml-3">
           Capital city:
+          {' '}
           {capital}
         </p>
         <p className="ml-3">
           Continents:
+          {' '}
           {continents}
-        </p>
-        <p className="ml-3">
-          Currencies:
-          {currencies}
-        </p>
-        <p className="ml-3">
-          Languages:
-          {languages}
         </p>
         <p className="ml-3">
           Population:
           {population}
         </p>
-        <h3>Legal status</h3>
+        <h3 className="font-semibold text-xl">Legal status</h3>
         <p className="ml-3">
           Independent:
-          {independent}
+          {' '}
+          {independent ? <span className="text-green-400">Yes</span> : <span className="text-red-400">No</span>}
         </p>
         <p className="ml-3">
           UN membership:
-          {unMember}
+          {' '}
+          {unMember ? <span className="text-green-400">Yes</span> : <span className="text-red-400">No</span>}
         </p>
-        <h3>Geography</h3>
+        <h3 className="font-semibold text-xl">Geography</h3>
         <p className="ml-3">
           Coordinates:
+          {' '}
           {coordinates}
         </p>
         <p className="ml-3">
           Region:
+          {' '}
           {region}
         </p>
         <p className="ml-3">
           Sub-region:
+          {' '}
           {subregion}
         </p>
         <p className="ml-3">
           Landlocked:
-          {landlocked}
+          {' '}
+          {landlocked ? <span className="text-red-400">Yes</span> : <span className="text-green-400">No</span>}
         </p>
         <p className="ml-3">
           Area:
+          {' '}
           {area}
         </p>
         <p className="ml-3">
           Timezones:
-          {timezones}
+          {' '}
+          {timezones.length}
         </p>
-        <h3>ISO codes</h3>
+        <h3 className="font-semibold text-xl">ISO codes</h3>
         <p className="ml-3">
           CCA2:
+          {' '}
           {cca2}
         </p>
         <p className="ml-3">
           CCA3:
+          {' '}
           {cca3}
         </p>
-        <h3>Other</h3>
-        <p className="ml-3">
+        <h3 className="font-semibold text-xl">Other</h3>
+        <p className="ml-3 capitalize">
           Start of week:
+          {' '}
           {startOfWeek}
         </p>
         <p className="ml-3">
           Fifa code:
+          {' '}
           {fifa}
         </p>
         <p className="ml-3">
           Driving side:
+          {' '}
           {drivingSide}
         </p>
       </section>
