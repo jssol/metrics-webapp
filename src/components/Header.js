@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaCog, FaSearch, FaChevronLeft } from 'react-icons/fa';
+import { FaSearch, FaChevronLeft } from 'react-icons/fa';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { startSearch } from '../redux/search/search';
@@ -42,7 +42,6 @@ const Header = (props) => {
               </button>
             )}
             {searchOpen && <Form />}
-            <FaCog className="ml-3" />
           </section>
         </>
       )}
