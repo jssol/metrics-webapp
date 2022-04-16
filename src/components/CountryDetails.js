@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useParams, NavLink, Outlet } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import randomNumber from '../logic/randomNumber';
+import General from './General';
 
 const CountryDetails = (props) => {
   const params = useParams();
@@ -21,13 +22,7 @@ const CountryDetails = (props) => {
         {' '}
         {country}
       </section>
-      <section>
-        <NavLink to="general">General</NavLink>
-        <NavLink to="covid">Covid</NavLink>
-      </section>
-      <section>
-        <Outlet />
-      </section>
+      <General />
     </main>
   );
 };
