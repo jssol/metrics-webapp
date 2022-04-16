@@ -27,7 +27,7 @@
 
 ## Live demo
 
-[Culturescape](https://jssol.github.io//metrics-webapp/)
+[Culturescape](https://jssol.github.io/metrics-webapp/)
 
 ## Getting Started
 
