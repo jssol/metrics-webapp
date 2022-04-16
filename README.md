@@ -1,28 +1,29 @@
-# Space Travelers Hub
+# Culturescape - Metrics webapp
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> A single page app where users can book space rockets and missions! 
+> Here you can let go of your imagination and discover amazing facts about countries around the world.
+> From legal facts to cultural facts, here you will find what you need to impress your friends and family.
 
 ## Screenshots
 
-- **Rockets page**
+- **Home page**
 
-![rockets page screenshot](./public/rockets.png)
+![home page screenshot](./public/home.png)
 
-- **Missions page**
+- **Country details page**
 
-![missions page screenshot](./public/missions.png)
+![details page screenshot](./public/details.png)
 
 ## Built With
 
 - HTML5, CSS3
-- JavaScript ES6, React/Redux, Tailwind, Bootstrap
-- CLI, TDD, gh-pages, Gitflow
+- JavaScript ES6, React/Redux, Tailwind, Sass
+- CLI, TDD, gh-pages, Gitflow, Integration tests
 
 ## Live demo
 
-You can visit live version via [link](https://amiraabouhadid.github.io/space_travelers_hub/)
+[Culturescape](https://jssol.github.io//metrics-webapp/)
 
 ## Getting Started
 
@@ -31,12 +32,12 @@ To get a local copy up and running follow these simple example steps:
 - Change the current working directory to the location you want the cloned directory.
 - Enter the following:
 ```
-$ git clone git@github.com:amiraabouhadid/space_travelers_hub.git.
+$ git clone git@github.com:jssol/metrics-webapp.git.
 ```
 - Press Enter to create your local clone.
 - Navigate to the cloned repository by running:
     ```
-    $ cd space_travelers_hub
+    $ cd metrics-webapp
     ```
 - Install all dependencies using:
     ``` 
@@ -59,14 +60,7 @@ $ git clone git@github.com:amiraabouhadid/space_travelers_hub.git.
 - Git
 - Node.js
 
-
 ## Authors
-
-👤 **Amira Abouhadid**
-
-- GitHub: [@amiraabouhadid](https://github.com/amiraabouhadid)
-- Twitter: [@AbouhadidAmira](https://twitter.com/AbouhadidAmira)
-- LinkedIn: [amira-abouhadid](https://www.linkedin.com/in/amira-abouhadid/)
 
 👤 **Jonathan Sivahera**
 
@@ -78,7 +72,11 @@ $ git clone git@github.com:amiraabouhadid/space_travelers_hub.git.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/amiraabouhadid/space_travelers_hub/issues).
+Feel free to check the [issues page](https://github.com/jssol/metrics-webapp/issues).
+
+## Acknowledgement
+
+Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
 
 ## Show your support
 
