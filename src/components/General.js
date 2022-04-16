@@ -35,7 +35,7 @@ const General = () => {
           <img src={emblem} alt={cca3} className="w-10/12 aspect-square" />
         </div>
       </section>
-      <section className="w-full bg-gray-900 flex flex-col py-5 px-10 capitalize">
+      <section className="w-full bg-gray-800 flex flex-col py-5 px-10 capitalize">
         <h3 className="font-semibold text-xl">General</h3>
         <p className="ml-3">
           Capital city:
@@ -49,6 +49,7 @@ const General = () => {
         </p>
         <p className="ml-3">
           Population:
+          {' '}
           {population}
         </p>
         <h3 className="font-semibold text-xl">Legal status</h3>
