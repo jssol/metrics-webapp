@@ -46,7 +46,7 @@ const Header = (props) => {
         </>
       )}
       {detailsOpen && (
-        <NavLink to="/" className="flex items-center text-2xl" onClick={handleClick}>
+        <NavLink to="/metrics-webapp/" className="flex items-center text-2xl" onClick={handleClick}>
           <FaChevronLeft className="mr-1" />
           {' '}
           Home
