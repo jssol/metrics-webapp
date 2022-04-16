@@ -22,41 +22,13 @@ const getCountries = () => async (dispatch) => {
         const {
           name,
           cca2,
-          cca3,
-          independent,
-          unMember,
-          currencies,
           capital,
-          region,
-          subregion,
-          languages,
-          latlng: coords,
-          population,
-          timezones,
-          continents,
-          flags: { svg: flag },
-          coatOfArms: { svg: emblem },
-          area,
         } = country;
 
         const formattedCountry = {
           name,
           cca2,
-          cca3,
-          independent,
-          unMember,
-          currencies,
           capital,
-          region,
-          subregion,
-          languages,
-          coords,
-          population,
-          timezones,
-          continents,
-          flag,
-          emblem,
-          area,
         };
 
         countries.push(formattedCountry);

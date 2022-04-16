@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import Header from './components/Header';
 import Home from './components/Home';
+import CountryDetails from './components/CountryDetails';
 import { getCountries } from './redux/countries/countries';
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
           exact
           path="/"
           element={(<Home theme={theme} countries={countries} />)}
+        />
+        <Route
+          path="/:country/details"
+          element={(<CountryDetails theme={theme} countries={countries} />)}
         />
       </Routes>
     </div>
