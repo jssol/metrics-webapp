@@ -26,9 +26,10 @@
 - JavaScript ES6, React/Redux, Tailwind, Sass
 - CLI, TDD, gh-pages, Gitflow, Integration tests
 
-## Live demo
+## Live demos
 
-[Culturescape](https://jssol.github.io/metrics-webapp/)
+- [Netlify](https://culturescape.netlify.app/)
+- [Heroku](https://culturescape.herokuapp.com/)
 
 ## Getting Started
 
