@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmetrics_webapp=self.webpackChunkmetrics_webapp||[]).push([[7870],{7870:function(e,s,c){e.exports=c.p+"static/media/vector.1dddbdbcfd5d00bb986e.svg"}}]);
