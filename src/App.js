@@ -19,7 +19,7 @@ const App = () => {
       <Header theme={theme} />
       <Routes>
         <Route
-          path="/metrics-webapp/"
+          path="/"
           element={(<Home theme={theme} countries={countries} />)}
         />
         <Route

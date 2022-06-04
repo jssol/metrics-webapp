@@ -1,9 +1,10 @@
 # Culturescape - Metrics webapp
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3908c55b-7d4f-40f0-884d-b27fc32daff4/deploy-status)](https://app.netlify.com/sites/culturescape/deploys)
 
 > Here you can let go of your imagination and discover amazing facts about countries around the world.
-> From legal facts to cultural facts, here you will find what you need to impress your friends and family.
+> From legal facts to cultural facts, here you will find what you need to impress your friends and family
 
 ## Screenshots
 
@@ -25,9 +26,10 @@
 - JavaScript ES6, React/Redux, Tailwind, Sass
 - CLI, TDD, gh-pages, Gitflow, Integration tests
 
-## Live demo
+## Live demos
 
-[Culturescape](https://jssol.github.io/metrics-webapp/)
+- [Netlify](https://culturescape.netlify.app/)
+- [Heroku](https://culturescape.herokuapp.com/)
 
 ## Getting Started
 
