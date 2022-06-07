@@ -90,4 +90,4 @@ Give a ⭐️ if you like my portfolio!
 
 ## 📝 License
 
-- This project is [AGPL-3.0](./LICENSE) licensed.
+- This project is [AGPL-3.0](./LICENSE) licensed
