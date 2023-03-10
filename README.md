@@ -29,7 +29,6 @@
 ## Live demos
 
 - [Netlify](https://culturescape.netlify.app/)
-- [Heroku](https://culturescape.herokuapp.com/)
 
 ## Getting Started
 
